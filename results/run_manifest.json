@@ -1,0 +1,28 @@
+{
+  "created": "2026-07-15T10:54:38",
+  "framework": "KerasNLP 0.29.1 / Keras 3.15.0 / backend jax",
+  "strategy": "full fine-tuning",
+  "seeds": [
+    42,
+    1,
+    2
+  ],
+  "seq_len": 256,
+  "epochs": 5,
+  "batch_size": 16,
+  "learning_rate": 2e-05,
+  "splits": {
+    "train": 4198,
+    "dev": 900,
+    "test": 900
+  },
+  "models_evaluated": [
+    "TF-IDF + LogReg",
+    "XLM-R (base)",
+    "mDeBERTa-v3 (base)",
+    "mBERT (cased)",
+    "DistilmBERT"
+  ],
+  "best_model": "mDeBERTa-v3 (base)",
+  "best_macro_f1": 0.917
+}

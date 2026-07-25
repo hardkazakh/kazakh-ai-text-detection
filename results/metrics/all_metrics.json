@@ -1,0 +1,52 @@
+{
+  "TF-IDF + LogReg": {
+    "model": "TF-IDF + LogReg",
+    "accuracy": 0.7711111111111111,
+    "macro_f1": 0.7757264896852997,
+    "weighted_f1": 0.771250767703857,
+    "f1_Human": 0.7567567567567568,
+    "f1_AI-Generated": 0.7744360902255639,
+    "f1_AI-Obfuscated": 0.7959866220735786,
+    "roc_auc_ovr": 0.9165187484502996
+  },
+  "XLM-R (base)": {
+    "model": "XLM-R (base)",
+    "accuracy": 0.9055555555555556,
+    "macro_f1": 0.9150936199905165,
+    "weighted_f1": 0.9053915361278753,
+    "f1_Human": 0.8942172073342737,
+    "f1_AI-Generated": 0.8968152866242038,
+    "f1_AI-Obfuscated": 0.954248366013072,
+    "roc_auc_ovr": 0.9812595123557658
+  },
+  "mDeBERTa-v3 (base)": {
+    "model": "mDeBERTa-v3 (base)",
+    "accuracy": 0.9088888888888889,
+    "macro_f1": 0.9170357277873515,
+    "weighted_f1": 0.9087898015995759,
+    "f1_Human": 0.8971428571428571,
+    "f1_AI-Generated": 0.9031446540880503,
+    "f1_AI-Obfuscated": 0.9508196721311475,
+    "roc_auc_ovr": 0.9854537033964624
+  },
+  "mBERT (cased)": {
+    "model": "mBERT (cased)",
+    "accuracy": 0.8911111111111111,
+    "macro_f1": 0.9008913981534631,
+    "weighted_f1": 0.891090804725718,
+    "f1_Human": 0.88,
+    "f1_AI-Generated": 0.8822768434670116,
+    "f1_AI-Obfuscated": 0.9403973509933775,
+    "roc_auc_ovr": 0.975081862956989
+  },
+  "DistilmBERT": {
+    "model": "DistilmBERT",
+    "accuracy": 0.8566666666666667,
+    "macro_f1": 0.8688984641608584,
+    "weighted_f1": 0.8561302759368989,
+    "f1_Human": 0.8426966292134831,
+    "f1_AI-Generated": 0.8438709677419355,
+    "f1_AI-Obfuscated": 0.9201277955271565,
+    "roc_auc_ovr": 0.9605582159292948
+  }
+}

@@ -1,0 +1,9 @@
+               precision    recall  f1-score   support
+
+        Human     0.8395    0.9246    0.8800       345
+ AI-Generated     0.9266    0.8420    0.8823       405
+AI-Obfuscated     0.9342    0.9467    0.9404       150
+
+     accuracy                         0.8911       900
+    macro avg     0.9001    0.9044    0.9009       900
+ weighted avg     0.8945    0.8911    0.8911       900

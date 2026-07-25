@@ -1,0 +1,5 @@
+split,Human,AI-Generated,AI-Obfuscated,Total
+train,1609,1889,700,4198
+dev,345,405,150,900
+test,345,405,150,900
+Total,2299,2699,1000,5998

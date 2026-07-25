@@ -1,0 +1,6 @@
+model,macro_f1_mean,ci95_low,ci95_high
+mDeBERTa-v3 (base),0.9168,0.8989,0.9351
+XLM-R (base),0.915,0.8973,0.9318
+mBERT (cased),0.9005,0.8806,0.9196
+DistilmBERT,0.8688,0.846,0.8892
+TF-IDF + LogReg,0.7757,0.7466,0.8023

@@ -1,0 +1,20 @@
+# Core
+keras==3.15.0
+keras-nlp==0.29.1
+jax[cpu]
+tensorflow
+
+# Classical baseline + eval
+scikit-learn
+scipy
+numpy
+pandas
+
+# EDA / viz
+matplotlib
+seaborn
+tqdm
+
+# Optional heavy EDA cells (RUN_HEAVY=True in notebook 01)
+sentence-transformers
+umap-learn
