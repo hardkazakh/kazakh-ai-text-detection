@@ -1,0 +1,2 @@
+model,macro_f1_indomain_3way,binary_f1_indomain,binary_acc_indomain,binary_f1_ood,binary_acc_ood,binary_f1_drop,ood_recall_machine,ood_recall_human,ood_pct_machine_called_obfuscated
+mDeBERTa-v3 (base),0.9026,0.897,0.9011,0.6915,0.717,-0.2056,0.4754,0.9159,0.0

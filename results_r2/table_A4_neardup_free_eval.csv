@@ -1,0 +1,6 @@
+model,n_test,n_clean,n_removed,macro_f1_full,macro_f1_no_neardup,delta
+mDeBERTa-v3 (base),900,900,0,0.917,0.917,0.0
+XLM-R (base),900,900,0,0.9151,0.9151,0.0
+mBERT (cased),900,900,0,0.9009,0.9009,0.0
+DistilmBERT,900,900,0,0.8689,0.8689,0.0
+TF-IDF + LogReg,900,900,0,0.7757,0.7757,0.0

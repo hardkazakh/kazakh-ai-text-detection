@@ -1,0 +1,7 @@
+model_A,model_B,n_seeds,median_delta,p_raw,note,p_holm,significant
+mDeBERTa-v3 (base),XLM-R (base),10,0.0016,0.6953,min attainable two-sided p = 0.0020,1.0,False
+mDeBERTa-v3 (base),mBERT (cased),5,0.0342,0.625,min attainable two-sided p = 0.0625,1.0,False
+mDeBERTa-v3 (base),DistilmBERT,5,0.0373,0.3125,min attainable two-sided p = 0.0625,1.0,False
+XLM-R (base),mBERT (cased),5,0.0287,0.8125,min attainable two-sided p = 0.0625,1.0,False
+XLM-R (base),DistilmBERT,5,0.0133,1.0,min attainable two-sided p = 0.0625,1.0,False
+mBERT (cased),DistilmBERT,5,0.007,0.4375,min attainable two-sided p = 0.0625,1.0,False

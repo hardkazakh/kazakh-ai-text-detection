@@ -1,0 +1,31 @@
+model,n_seeds_in_ensemble,macro_f1
+mDeBERTa-v3 (base),1,0.8918
+mDeBERTa-v3 (base),2,0.8944
+mDeBERTa-v3 (base),3,0.9026
+mDeBERTa-v3 (base),4,0.9095
+mDeBERTa-v3 (base),5,0.906
+mDeBERTa-v3 (base),6,0.9004
+mDeBERTa-v3 (base),7,0.9066
+mDeBERTa-v3 (base),8,0.9082
+mDeBERTa-v3 (base),9,0.9091
+mDeBERTa-v3 (base),10,0.9075
+XLM-R (base),1,0.8904
+XLM-R (base),2,0.87
+XLM-R (base),3,0.9058
+XLM-R (base),4,0.8764
+XLM-R (base),5,0.8903
+XLM-R (base),6,0.8845
+XLM-R (base),7,0.8915
+XLM-R (base),8,0.9014
+XLM-R (base),9,0.9074
+XLM-R (base),10,0.9089
+mBERT (cased),1,0.857
+mBERT (cased),2,0.886
+mBERT (cased),3,0.8914
+mBERT (cased),4,0.8896
+mBERT (cased),5,0.8821
+DistilmBERT,1,0.8545
+DistilmBERT,2,0.8587
+DistilmBERT,3,0.8643
+DistilmBERT,4,0.8595
+DistilmBERT,5,0.8711

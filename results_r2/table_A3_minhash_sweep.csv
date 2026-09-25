@@ -1,0 +1,11 @@
+shingle,threshold,n_candidate_pairs,n_verified_pairs,within_train,within_dev,within_test,train_dev,train_test,dev_test,n_test_docs_contaminated,pct_test_contaminated,label_conflicting_pairs
+word 5-gram,0.5,7,2,2,0,0,0,0,0,0,0.0,0
+word 5-gram,0.6,2,0,0,0,0,0,0,0,0,0.0,0
+word 5-gram,0.7,0,0,0,0,0,0,0,0,0,0.0,0
+word 5-gram,0.8,0,0,0,0,0,0,0,0,0,0.0,0
+word 5-gram,0.9,0,0,0,0,0,0,0,0,0,0.0,0
+char 8-gram,0.5,37,13,13,0,0,0,0,0,0,0.0,1
+char 8-gram,0.6,11,10,10,0,0,0,0,0,0,0.0,0
+char 8-gram,0.7,6,4,4,0,0,0,0,0,0,0.0,0
+char 8-gram,0.8,2,2,2,0,0,0,0,0,0,0.0,0
+char 8-gram,0.9,0,0,0,0,0,0,0,0,0,0.0,0

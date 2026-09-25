@@ -1,0 +1,17 @@
+tokenizer,class,pct_truncated_at_256,mean_retained_fraction
+XLM-R (base),Human,25.22,0.6679
+XLM-R (base),AI-Generated,19.01,0.7705
+XLM-R (base),AI-Obfuscated,0.0,1.0
+XLM-R (base),ALL,18.22,0.7412
+mDeBERTa-v3 (base),Human,26.96,0.6249
+mDeBERTa-v3 (base),AI-Generated,24.44,0.7382
+mDeBERTa-v3 (base),AI-Obfuscated,0.0,1.0
+mDeBERTa-v3 (base),ALL,21.33,0.7069
+mBERT (cased),Human,30.43,0.576
+mBERT (cased),AI-Generated,29.63,0.69
+mBERT (cased),AI-Obfuscated,0.0,1.0
+mBERT (cased),ALL,25.0,0.6619
+DistilmBERT,Human,30.43,0.576
+DistilmBERT,AI-Generated,29.63,0.69
+DistilmBERT,AI-Obfuscated,0.0,1.0
+DistilmBERT,ALL,25.0,0.6619

@@ -1,0 +1,4 @@
+class,n,median,max,pct_gt_85_words,pct_gt_100_words,pct_gt_128_words,pct_gt_170_words,pct_gt_256_words
+Human,2299,45.0,380,27.75,25.66,23.53,21.84,10.83
+AI-Generated,2699,54.0,359,30.09,25.57,19.04,15.04,3.0
+AI-Obfuscated,1000,37.0,65,0.0,0.0,0.0,0.0,0.0

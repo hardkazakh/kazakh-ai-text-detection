@@ -18,3 +18,12 @@ tqdm
 # Optional heavy EDA cells (RUN_HEAVY=True in notebook 01)
 sentence-transformers
 umap-learn
+
+# Revision notebooks (00, 04-09)
+keras-hub          # notebooks 07-09 (successor to keras-nlp)
+transformers       # tokenizer fertility (04), generation (07, 08)
+accelerate
+sentencepiece
+bitsandbytes       # 4-bit loading for the paraphraser on a 16 GB GPU
+datasketch         # MinHash LSH near-duplicate audit (05)
+statsmodels        # McNemar exact test (07)

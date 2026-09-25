@@ -105,6 +105,54 @@ See [`results/run_manifest.json`](results/run_manifest.json) for the exact run m
 | `fig5_bootstrap_ci.png` | Macro-F1 with 95% bootstrap CIs |
 | `fig6_length_stratified_f1.png` | Macro-F1 by input length band |
 
+## Robustness analyses (2026 revision)
+
+Six controlled analyses were added in response to peer review. Three support the benchmark as
+constructed; three constrain what it can be used to claim. All of them are reproducible from this
+repository — notebooks 04, 05 and 06 need no GPU and no retraining, because the files in
+`results/predictions/` are row-aligned with `data/cleaned/test_cleaned.json`.
+
+| Notebook | Question | Result | Tables |
+|---|---|---|---|
+| `04` | Is the AI-obfuscated class recognised by its shortness? | **No.** On a strictly length-matched subset (390 docs, 130/class, median 39 words in *every* class) macro-F1 falls only 0.026–0.057, while a word-count-only control collapses 0.416 → 0.233 | `results_r2/table_A1*`, `table_A2` |
+| `04` | How does Kazakh morphology interact with the 256-token limit? | Fertility 1.96 (XLM-R) / 2.41 (mDeBERTa) / 2.93 (mBERT, DistilmBERT) sub-tokens per word, near-constant across classes. Truncation is **not**: 0% of AI-obfuscated vs 25–30% of human documents | `results_r2/table_A6`, `table_A7` |
+| `05` | Is there near-duplicate leakage across splits? | **None.** MinHash LSH (128 perms) + exact Jaccard verification, thresholds 0.5–0.9, word-5-gram and char-8-gram shingles: zero cross-split pairs everywhere, zero contaminated test documents | `results_r2/table_A3`, `table_A4` |
+| `06` | How much signal is basic surface statistics? | 31 surface features reach 0.715; TF-IDF 0.775; TF-IDF + surface 0.841 — still 0.076 below the best transformer ensemble | `results_r2/table_A5*` |
+| `09` | Does the model ranking survive reseeding? | **No.** Over 30 runs, seed SD is 0.034 (mDeBERTa) and 0.217 (XLM-R, including one degenerate run), larger than every gap between encoders. Wilcoxon signed-rank on paired per-seed scores separates no pair (all *p*<sub>Holm</sub> = 1.00), and the top-two ensemble ordering flips | `results_r2_seeds/*` |
+| `08` | Does detection transfer to an unseen generator? | **No.** Against Mistral-7B-Instruct-v0.3, binary macro-F1 drops 0.897 → 0.692 and machine recall falls to **0.475**, while human recall is preserved at 0.916 | `results_r2_crossgen/table_crossgenerator.csv` |
+| `07` | What does LLM paraphrasing do to the decision? | A single paraphrasing pass does **not** evade the binary decision (AI arm 82.4% → 85.7%, *p* = 0.374). But only 4.6–6.8% of genuine paraphrases receive the AI-obfuscated label, so that class recognises the corpus's own paraphrasing procedure rather than paraphrasing in general | `results_r2_paired/*` |
+
+### Run order
+
+Run `00_setup_and_check.ipynb` once, then:
+
+| Order | Notebook | Runtime | Hardware |
+|:---:|---|---|---|
+| 1 | `04_length_control_and_tokenizer_fertility` | ~5 min | CPU |
+| 2 | `05_near_duplicate_audit_minhash` | ~4 min | CPU |
+| 3 | `06_surface_feature_baseline` | ~2 min | CPU |
+| 4 | `09_multiseed_finetuning` | ~6 h (30 runs) | GPU — **run before 07 and 08**; saves the weights they load |
+| 5 | `07_paired_paraphrase_design` | ~1 h | GPU |
+| 6 | `08_cross_generator_ood_eval` | ~1 h | GPU |
+
+Notebooks 07, 08 and 09 append every finished unit to disk and skip it on re-run.
+
+### Models used
+
+| Role | Model | Notes |
+|---|---|---|
+| Corpus generator | `Qwen/Qwen2.5-7B-Instruct`, `Qwen/Qwen2.5-32B-Instruct-AWQ` | as in the original benchmark |
+| Unseen generator (notebook 08) | `mistralai/Mistral-7B-Instruct-v0.3` | the Kazakh-native candidates (KazLLM, Sherkala) are gated repositories; access was not granted |
+| Paraphraser (notebook 07) | `Qwen/Qwen2.5-7B-Instruct` | same family as the corpus generator — isolates paraphrasing with generator family held constant; **not** an unseen-paraphraser test |
+
+### Known limitations of the added analyses
+
+- The original 3,300-prompt suite was unavailable for notebook 08, so prompt distribution changes
+  alongside the generator; the measured drop is an **upper bound** on the generator effect.
+- No Kazakh POS tagger of characterised accuracy on this text mixture was available, so notebook 06
+  omits POS features and exposes a hook instead.
+- Sensitivity to the 256-token context limit itself (a longer window, or chunking) is untested.
+
 ## Reproducing
 
 ```bash

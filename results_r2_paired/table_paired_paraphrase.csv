@@ -1,0 +1,3 @@
+arm,n,orig_class,pct_machine_before,ci_machine_before,pct_machine_after,ci_machine_after,pct_flip_to_human,pct_flip_to_machine,pct_3way_before_correct,pct_3way_after_obfuscated,pct_3way_after_human,mean_p_machine_before,mean_p_machine_after,median_delta_words,median_self_jaccard,interpretation,mcnemar_machine_to_human,mcnemar_human_to_machine,mcnemar_p,wilcoxon_p_machine_p,wilcoxon_delta_words_p
+aigen_to_obf,238,AI-Generated,82.35,"[77.3, 87.0]",85.71,"[81.1, 89.9]",11.34,14.71,80.25,4.62,14.29,0.7369,0.8086,3.0,0.0,detection rate; 100 - after = evasion rate,27,35,0.374,4.49e-08,1.66e-07
+human_to_obf,220,Human,9.09,"[5.5, 13.2]",85.0,"[80.0, 89.5]",0.0,75.91,90.91,6.82,15.0,0.2119,0.7729,5.0,0.0,false-positive rate -> detection rate,0,167,9.12e-38,7.85e-37,1.64e-15
